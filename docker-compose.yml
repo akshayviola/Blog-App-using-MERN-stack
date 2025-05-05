@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: mern-frontend
+    image: akshay2001a/mern-frontend:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - mern-network
+
+  backend:
+    container_name: mern-backend
+    image: akshay2001a/mern-backend:latest
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge
