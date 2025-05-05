@@ -1,0 +1,28 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ./server:/app
+      - /app/node_modules     # Avoid overwriting installed modules
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=development
+    command: ["nodemon", "server.js"]
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
