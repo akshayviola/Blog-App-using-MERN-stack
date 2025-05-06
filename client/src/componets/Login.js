@@ -106,7 +106,7 @@ const Login = () => {
             type="submit"
             variant="contained"
             sx={{ borderRadius: 3, marginTop: 3 }}
-            color="success"
+            color="primary"
           >
             Submit
           </Button>
