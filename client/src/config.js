@@ -1,4 +1,4 @@
 const config = {
-  BASE_URL: "http://34.251.84.23:5001",
+  BASE_URL: "http://3.250.58.194:5001",
 };
 export default config;
